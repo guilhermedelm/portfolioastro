@@ -1,0 +1,145 @@
+---
+import astroLogo from '../assets/astro.svg';
+import background from '../assets/background.svg';
+---
+
+<div class="container">
+        <div class="social-icons">
+          <a href="https://github.com/seu-usuario" target="_blank" class="icon-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/seu-usuario" target="_blank" class="icon-link">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">Sobre</a></li>
+          <li><a href="#projects">Projetos</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+      </div>
+</div>
+<style>
+	.container {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80px;
+  background: rgba(15, 32, 39, 0.95); /* semi-transparente */
+  z-index: 10;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 30px;
+}
+
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+	color: #ffc506;
+}
+  
+.icon-link {
+    color: #f7941d;
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+  
+.icon-link:hover {
+    transform: scale(1.2);
+    color: #ffc506;
+	text-shadow: 0 0 10px #ffc506;
+}
+  
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+  
+.nav-links li {
+    display: inline-block;
+    text-transform: uppercase;
+    color: #f7941d;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+  
+.nav-links li a {
+    text-decoration: none;
+    color: inherit;
+}
+  
+.nav-links li a:hover {
+    color: #ffc506;
+	text-shadow: 0 0 8px #ffc506
+}
+
+.container ul {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 30px;
+}
+
+.container ul li {
+  display: inline-block;
+  padding: 40px 15px;
+  text-transform: uppercase;
+  color: #f7941d;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.container ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ffc506;
+  transition: 0.5s ease;
+}
+
+.container ul li:hover {
+  color: #1e1e2b;
+  transition-delay: 0.5s;
+}
+
+.container ul li:hover::before {
+  width: 100%;
+}
+
+.container ul li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  background-color: #ffc506;
+  transition: 0.4s ease;
+  z-index: -1;
+}
+
+.container ul li:hover::after {
+  height: 100%;
+  transition-delay: 0.4s;
+}
+}
+</style>
