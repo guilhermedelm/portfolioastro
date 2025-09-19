@@ -1,0 +1,184 @@
+---
+
+---
+
+<section id="experiencia" class="experience-section">
+  <h2 class="section-title">Experiências<span class="dot">.</span></h2>
+
+  <div class="experience-card">
+    <div class="experience-header">
+      <h3>CJR</h3>
+      <span class="date">Mar. 2025 – Jul. 2025</span>
+    </div>
+    <h4 class="role">Full Stack Software Engineer Trainee</h4>
+    <span class="location">Brasília</span>
+    <p>
+      Participei como trainee do processo seletivo da empresa Júnior CJR onde adquiri habilidades Full Stack principalmente com as frameworks
+      Node.js,Next.js,prisma e postman. Nesse processo criamos um site de avaliação de professores, disponível no meu github
+    </p>
+    <div class="tech-stack">
+      <span>Next.js</span>
+      <span>React</span>
+      <span>Typescript</span>
+      <span>Node.js</span>
+      <span>PostgreSQL</span>
+      <span>TailwindCSS</span>
+      <span>AWS</span>
+    </div>
+  </div>
+
+  <div class="experience-card">
+    <div class="experience-header">
+      <h3>OffSec</h3>
+      <span class="date">Mar. 2025 – Presente</span>
+    </div>
+    <h4 class="role">Red team CyberSec</h4>
+    <span class="location">Brasília-UnB</span>
+    <p>
+      Grupo de estudos da UnB guiado pelo professor Roberto Filho focado em treinamento red team por meio de CTF's feitos no Try Hack Me
+      e Hack the Box
+    </p>
+    <div class="tech-stack">
+      <span>Try Hack Me</span>
+      <span>Kali-Linux</span>
+      <span>Hack the Box</span>
+    </div>
+  </div>
+
+  <div class="experience-card">
+    <div class="experience-header">
+      <h3>Curso Swift e BD eldorado</h3>
+      <span class="date">Mar. 2025 – Julho 2025</span>
+    </div>
+    <h4 class="role">Swift e Banco de dados</h4>
+    <span class="location">Brasília-UnB</span>
+    <p>
+      Curso de aprendizado em Swift e Banco de dados com certificado promovido com o instituto eldorado em colaboração 
+      com a IBM no projeto HackaTruck.Nesse curso desenvolvi minhas habilidades em Swift montando diversos aplicativos 
+      e aprofundei meus conhecimentos em Banco de dados aliado à apps em swift
+    </p>
+    <div class="tech-stack">
+      <span>Swift</span>
+      <span>postgress</span>
+      <span>Postman</span>
+    </div>
+  </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".experience-section");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
+        observer.unobserve(entry.target); // anima apenas uma vez
+      }
+    });
+  }, { threshold: 0.2 }); // dispara quando 20% do elemento aparece
+
+  elements.forEach(el => observer.observe(el));
+});
+</script>
+
+<style>
+
+.experience-section{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+.experience-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-title {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #00ffae
+}
+  
+.dot {
+    color: white;
+    
+}
+
+    .experience-section {
+  padding: 60px 20px;
+}
+
+.experience-card {
+  background: #0f2027; /* mesma vibe do seu site */
+  opacity: 0.9;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.experience-header h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.experience-card .date {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.role {
+  color: #00ff88; /* destaque (como seus títulos) */
+  font-size: 1.1rem;
+  margin: 8px 0;
+}
+
+.location {
+  font-size: 0.9rem;
+  color: #ccc;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.experience-card p {
+  color: #ddd;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-stack span {
+  background: #222;
+  color: #eee;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: background 0.3s ease;
+}
+
+.tech-stack span:hover {
+  background: #00ff88;
+  color: #111;
+}
+
+</style>

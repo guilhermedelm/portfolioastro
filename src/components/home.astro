@@ -7,30 +7,54 @@
       <h1>Oi, eu sou Guilherme</h1>
       <h2>analista de dados</h2>
       <p>Sou estudante de Ciência da Computação apaixonado por análise de dados e Cybersecurity. Entusiasta de ML e Engenharia de Software.</p>
-      <button class="cta" >
-        <span>Ver Projetos</span>
-        <svg width="15px" height="10px" viewBox="0 0 13 10">
-            <path d="M1,5 L11,5"></path>
-            <polyline points="8 1 12 5 8 9"></polyline>
+      <a href="#contact" class="cta">
+        <span>Contato</span>
+          <svg width="15px" height="10px" viewBox="0 0 13 10">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
         </svg>
-        </button>
+      </a>
     </div>
-    <div class="geometric-shape"></div>
+    <div class="imagem">
+      <img class="img" src="Images/fotoperfil.jpg" alt="minha foto" />
+    </div>
   </section>
 
 <style>
     /* Home */
-.home-section {
+.img{
+  width: 400px;          /* tamanho da foto */
+  height: 400px;
+  object-fit: cover;     /* corta a imagem para caber no quadrado/círculo */
+  border-radius: 50%;    /* deixa circular (tira se quiser quadrado com cantos arredondados) */
+  border: 4px solid #234567; /* cor da borda (verde, igual às tags do seu site) */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* sombra para destacar */
+}
 
-  display: flex;
-  justify-content: center;
+.imagem{
+      flex: 1 1 300px;
+    display: flex;
+    align-items: center;
+    position:relative;
+
+    flex-direction: column;
+    gap: 40px;
+}
+.home-section {
   align-items: center;
-  text-align: center;
-  position: absolute; /* Posicionamento absoluto em relação ao .paper-background */
-    left: -25%; /* 1/4 da largura do container */
-    top: -92%;
+   display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    max-height: -1200px;
+    margin:  0 auto;
+    padding: 60px 20px;
     position: relative;
-    z-index: 2;
+
+
+
+    
 
 
 }
@@ -46,6 +70,7 @@ position: relative;
     opacity: 0.9; /* Toda a div com 70% de opacidade */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
 
 }
 
@@ -110,6 +135,7 @@ position: relative;
   border: none;
   background: none;
   cursor: pointer;
+  text-decoration: none
 }
 
 .cta:before {

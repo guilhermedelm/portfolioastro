@@ -5,11 +5,14 @@ import background from '../assets/background.svg';
 
 <div class="container">
         <div class="social-icons">
-          <a href="https://github.com/seu-usuario" target="_blank" class="icon-link">
+          <a href="https://github.com/guilhermedelm" target="_blank" class="icon-link">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://linkedin.com/in/seu-usuario" target="_blank" class="icon-link">
+          <a href="https://www.linkedin.com/in/guilherme-delmonte-rios-32a647332/" target="_blank" class="icon-link">
             <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="/Currículo.pdf" target="_blank" class="cv-button">
+          Currículo
           </a>
         </div>
       
@@ -17,6 +20,7 @@ import background from '../assets/background.svg';
           <li><a href="#home">Home</a></li>
           <li><a href="#about">Sobre</a></li>
           <li><a href="#projects">Projetos</a></li>
+          <li><a href="#experiencia">Experiência</a></li>
           <li><a href="#contact">Contato</a></li>
         </ul>
       </div>
@@ -141,5 +145,24 @@ import background from '../assets/background.svg';
   height: 100%;
   transition-delay: 0.4s;
 }
+
+
+
+.cv-button {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: #1e1e2b;
+  color: #f7941d;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
+
+.cv-button:hover {
+  color:#1e1e2b;
+  background:#f7941d;
+  transform: translateY(-2px);
+}
+
 </style>

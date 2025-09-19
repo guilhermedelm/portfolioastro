@@ -19,7 +19,7 @@
           Fique à vontade para me chamar caso queira colaborar ou trocar uma ideia! 🌐
         </p>
         <div class="social-icons">
-            <a href="https://github.com/guilhemedelm" target="_blank" class="icon-link">
+            <a href="https://github.com/guilhermedelm" target="_blank" class="icon-link">
                 <i class="fab fa-github"></i>
             </a>
             <a href="https://www.linkedin.com/in/guilherme-delmonte-rios-32a647332/" target="_blank" class="icon-link">
@@ -66,6 +66,25 @@
     </div>
   </section>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".about-container");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
+        observer.unobserve(entry.target); // anima apenas uma vez
+      }
+    });
+  }, { threshold: 0.2 }); // dispara quando 20% do elemento aparece
+
+  elements.forEach(el => observer.observe(el));
+});
+</script>
+
+
+
 <style>
 /* About */
 .img{
@@ -73,6 +92,9 @@
     height:auto;
     border-radius: 3%;
 }
+
+
+
 
 .about-container {
     display: flex;
@@ -84,6 +106,14 @@
     padding: 60px 20px;
     position: relative;
     z-index: 2;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+.about-container.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
   
 .about-text {

@@ -1,0 +1,144 @@
+---
+---
+
+<section id="contact" class="contact-section">
+  <h2 class="section-title">Contato<span class="dot">.</span></h2>
+
+  <p class="contact-text">
+    Quer trocar uma ideia, colaborar em algum projeto ou apenas bater um papo?
+    Entre em contato comigo pelos canais abaixo ou envie uma mensagem diretamente.
+  </p>
+
+  <div class="contact-links">
+    <a href="mailto:guigadelmonterios@gmail.com" target="_blank" title="Email">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://github.com/guilhermedelm" target="_blank" title="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/guilherme-delmonte-rios-32a647332/" target="_blank" title="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+
+  <form
+    class="contact-form"
+    action="https://formspree.io/f/xovnglpo" 
+    method="POST"
+  >
+    <input type="text" name="name" placeholder="Seu nome" required />
+    <input type="email" name="email" placeholder="Seu email" required />
+    <textarea name="message" rows="5" placeholder="Sua mensagem..." required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".contact-section");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
+        observer.unobserve(entry.target); // anima apenas uma vez
+      }
+    });
+  }, { threshold: 0.2 }); // dispara quando 20% do elemento aparece
+
+  elements.forEach(el => observer.observe(el));
+});
+</script>
+
+<style>
+
+.section-title {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #00ffae
+}
+  
+.dot {
+    color: white;
+    
+}
+
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
+  opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+.contact-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.contact-text {
+  color: #ccc;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.contact-links {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-links a {
+  font-size: 2rem;
+  color: #eee;
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #00ff88; /* neon verde */
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #0f2027;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  color: #eee;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #999;
+}
+
+.contact-form button {
+  background: #f7941d;
+  color: #111;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #ffc506
+}
+
+</style>

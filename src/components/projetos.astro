@@ -2,7 +2,7 @@
 
 ---
   <section id="projects" class="projects-section">
-    <h2 class="section-title">Projetos<span class="dot">.</span></h2>
+    <h2 class="dot"><span class="highlight">Projetos</span>.</h2>
     <div class="projects-grid">
   
       <!-- Projeto 1 -->
@@ -14,7 +14,7 @@
           <p> Aplicativo em Java para registro de horários de entrada, saída e almoço de funcionários, com cálculo
             automático da média salarial baseada no total de horas trabalhadas .</p>
           <div class="project-links">
-            <a href="https://github.com/seuusuario/onabudget" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/AndreRimes/TP1-Pontoalidade" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
           </div>
         </div>
       </div>
@@ -27,36 +27,36 @@
           <p class="tech">Python - Cv2 - Mediapipe - Pickle - Sklearning </p>
           <p>Aplicativo feito em python que reconhece em tempo real rostos cadastrados no sistema. Usa as bibliotecas cv2 mediapipe e sklearning respectivamente para reconhecer rosto, traçar FaceMesh e aplicar knn já treinado para detecção de rosto.</p>
           <div class="project-links">
-            <a href="https://github.com/seuusuario/portfolio" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://meuportfolio.com" title="Abrir projeto" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+            <a href="https://github.com/guilhermedelm/facerecon" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+            
           </div>
         </div>
       </div>
   
       <!-- Projeto 3 -->
       <div class="project-card">
-        <img src="img/projeto3.png" alt="Jogo Retrô">
+        <img src="Images/Spotfake.png" alt="Jogo Retrô">
         <div class="project-info">
           <h3>Spot Fake</h3>
           <p class="tech">Python - Igraph - Pandas </p>
           <p>Programa de análise de dados escrito em python com objetivo de identificar prováveis contas disseminadoras de Fake-News no Twitter. Usa análise de grafos aliado à pandas e Igraph para mostrar contas, retiradas do banco de dados do Twitter, mais prováveis de estarem disseminando informações falsas </p>
           <div class="project-links">
-            <a href="https://github.com/seuusuario/jogo-retro" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://jogoretro.vercel.app" title="Abrir projeto" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+            <a href="https://github.com/guilhermedelm/spot-fake" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+           
           </div>
         </div>
       </div>
   
       <!-- Projeto 4 -->
       <div class="project-card">
-        <img src="img/projeto4.png" alt="Selo Social">
+        <img src="Images/Food_where.png" alt="Selo Social">
         <div class="project-info">
           <h3>Food-Where</h3>
           <p class="tech">Python - Django - geopy - openxyl - Pandas - </p>
           <p>Site feito em Django para procurar pequenos produtores mais pertos de você. Possui interface feita com Django, usa geopy para cálculo de localização  e utiliza knn para melhora no algoritmo de recomendações</p>
           <div class="project-links">
-            <a href="https://github.com/seuusuario/selo-social" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://selosocial.org" title="Abrir projeto" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+            <a href="https://github.com/guilhermedelm/food" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+           
           </div>
         </div>
       </div>
@@ -64,11 +64,50 @@
     </div>
   </section>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll(".projects-section");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
+        observer.unobserve(entry.target); // anima apenas uma vez
+      }
+    });
+  }, { threshold: 0.2 }); // dispara quando 20% do elemento aparece
+
+  elements.forEach(el => observer.observe(el));
+});
+</script>
+
+
+
 <style>
 .projects-section {
   padding: 2rem 2rem;
- 
+  opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    position: relative;
 }
+.projects-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
 
 .section-title {
   font-size: 2.5rem;
@@ -82,10 +121,11 @@
   grid-template-columns: repeat(2, 1fr); /* duas colunas */
   grid-template-rows: repeat(2, 1fr);    /* duas linhas */
   gap: 5rem; /* espaçamento entre cards */
+
 }
 
 .project-card {
-  background: #1a1d1c; /* cinza bem escuro, estilo concreto */
+  background: #0f2027;/*#1a1d1c;  cinza bem escuro, estilo concreto */
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -139,5 +179,16 @@
   color: #fff;
 }
 
+
+.dot {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+  
+.highlight {
+    color: #00ffae;
+    
+}
 
 </style>
