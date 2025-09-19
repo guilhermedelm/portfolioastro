@@ -1,0 +1,143 @@
+---
+
+---
+  <section id="projects" class="projects-section">
+    <h2 class="section-title">Projetos<span class="dot">.</span></h2>
+    <div class="projects-grid">
+  
+      <!-- Projeto 1 -->
+      <div class="project-card">
+        <img src="img/projeto1.png" alt="Pontoalidade">
+        <div class="project-info">
+          <h3>Pontoalidade</h3>
+          <p class="tech">Java - JavaFx</p>
+          <p> Aplicativo em Java para registro de horários de entrada, saída e almoço de funcionários, com cálculo
+            automático da média salarial baseada no total de horas trabalhadas .</p>
+          <div class="project-links">
+            <a href="https://github.com/seuusuario/onabudget" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Projeto 2 -->
+      <div class="project-card">
+        <img src="img/projeto2.png" alt="Portfolio">
+        <div class="project-info">
+          <h3>facerecon</h3>
+          <p class="tech">Python - Cv2 - Mediapipe - Pickle - Sklearning </p>
+          <p>Aplicativo feito em python que reconhece em tempo real rostos cadastrados no sistema. Usa as bibliotecas cv2 mediapipe e sklearning respectivamente para reconhecer rosto, traçar FaceMesh e aplicar knn já treinado para detecção de rosto.</p>
+          <div class="project-links">
+            <a href="https://github.com/seuusuario/portfolio" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://meuportfolio.com" title="Abrir projeto" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Projeto 3 -->
+      <div class="project-card">
+        <img src="img/projeto3.png" alt="Jogo Retrô">
+        <div class="project-info">
+          <h3>Spot Fake</h3>
+          <p class="tech">Python - Igraph - Pandas </p>
+          <p>Programa de análise de dados escrito em python com objetivo de identificar prováveis contas disseminadoras de Fake-News no Twitter. Usa análise de grafos aliado à pandas e Igraph para mostrar contas, retiradas do banco de dados do Twitter, mais prováveis de estarem disseminando informações falsas </p>
+          <div class="project-links">
+            <a href="https://github.com/seuusuario/jogo-retro" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://jogoretro.vercel.app" title="Abrir projeto" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Projeto 4 -->
+      <div class="project-card">
+        <img src="img/projeto4.png" alt="Selo Social">
+        <div class="project-info">
+          <h3>Food-Where</h3>
+          <p class="tech">Python - Django - geopy - openxyl - Pandas - </p>
+          <p>Site feito em Django para procurar pequenos produtores mais pertos de você. Possui interface feita com Django, usa geopy para cálculo de localização  e utiliza knn para melhora no algoritmo de recomendações</p>
+          <div class="project-links">
+            <a href="https://github.com/seuusuario/selo-social" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://selosocial.org" title="Abrir projeto" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+<style>
+.projects-section {
+  padding: 2rem 2rem;
+ 
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  color: #00ffae; /* verde destacado */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* duas colunas */
+  grid-template-rows: repeat(2, 1fr);    /* duas linhas */
+  gap: 5rem; /* espaçamento entre cards */
+}
+
+.project-card {
+  background: #1a1d1c; /* cinza bem escuro, estilo concreto */
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* sombra brutalista */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* imagens cortadas proporcionalmente */
+  border-bottom: 2px solid #333;
+}
+
+.project-info {
+  padding: 1rem;
+}
+
+.project-info h3 {
+  margin-bottom: 0.5rem;
+  color: #00ffae;
+}
+
+.project-info p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #ccc;
+}
+
+.project-info .tech {
+  font-size: 0.85rem;
+  color: #999;
+  font-style: italic;
+}
+
+.project-links a {
+  margin-right: 0.5rem;
+  color: #00ffae;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.project-links a:hover {
+  color: #fff;
+}
+
+
+</style>

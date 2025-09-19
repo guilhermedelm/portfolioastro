@@ -1,7 +1,5 @@
 ---
 // src/layouts/LayoutPrincipal.astro
-import ParticlesBackground from '../components/particles.astro'; // 1. Importe o componente
-
 const { title } = Astro.props;
 //import '../styles/global.css';
 ---
@@ -16,13 +14,14 @@ const { title } = Astro.props;
   <link rel="stylesheet" href="login.css" />
 </head>
 	<body>
-		<ParticlesBackground /> <header>
+	   <header>
     		<nav>
       		</nav>
   		</header>
 
   		<main>
-    		<slot /> </main>
+    <section style="margin-bottom: 2rem;"><slot /></section>
+      </main>
 
   		<footer>
     	</footer>
@@ -42,26 +41,49 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
+/* From Uiverse.io by jeremyssocial */ 
 body {
-  font-family: "Nunito Sans", sans-serif;
-  background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
-  background-size: 600% 600%;
-  animation: gradientMove 12s ease infinite;
-  background-attachment: fixed;
-  color: white;
-}
-@keyframes gradientMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-#particles-js {
-  position: fixed;
-  top: 0;
-  left: 0;
+  /* Basic dimensions and centering */
   width: 100%;
-  height: 100%;
-  z-index: -1; /* fica atrás do resto */
-  background: transparent;
+  min-height: 100vh;
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  font-family: "Nunito Sans", sans-serif;
+  color: #E0E0E0;
+
+  /* Dark mode colors and gradient */
+  background: #121212; /* Fallback for browsers that don't support gradients */
+  background: linear-gradient(
+    135deg,
+    #121212 25%,
+    #1a1a1a 25%,
+    #1a1a1a 50%,
+    #121212 50%,
+    #121212 75%,
+    #1a1a1a 75%,
+    #1a1a1a
+  );
+  background-size: 40px 40px;
+
+  /* Animation */
+  animation: move 4s linear infinite;
 }
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+  /*main {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }*/
+
 </style>
